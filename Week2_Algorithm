@@ -1,13 +1,15 @@
-var frequencySort = function(s) {
-    let unsorted = {};
-    for (let i = 0; i < s.length; i++) {
-        unsorted[s[i]] === undefined ? (unsorted[s[i]] = 1) : unsorted[s[i]]++;
+function sortString(s) {
+    let dict = {};
+    for(let i =0; i<s.length; i++){
+        let current = s.charAt(i);
+        dict[current] ? dict[current]++ : dict[current] = 1;
     }
-
-    sortedEntries = Object.entries(unsorted).sort((a, b) => {
-        if (a[1] < b[1]) return 1;
-        else if (a[1] > b[1]) return -1;
-        return 0;
-    });
-    return sortedEntries.map((letter) => letter[0].repeat(letter[1])).join('');
+    const sortCount = Object.keys(dict).sort((a,b) => dict[b] - dict[a])
+    let sortedStr = "";
+    sortcount.forEach(c => {
+        for (let j = 0; i<dict[c]; j++) }
+            sortedStr = sortedStr + c;
+        }
+    })
+    return sortedStr;
 };
